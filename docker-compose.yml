@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    image: jumplao/mybackend
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    command: ["run", "dev"]
+  helloworld:
+    image: jumplao/docker-localtunnel
+    links: 
+      - backend:jumplaoserver
+    command: --subdomain myjumplao --port 3000 --local-host jumplaoserver
+    restart: on-failure
