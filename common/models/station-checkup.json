@@ -1,0 +1,29 @@
+{
+  "name": "StationCheckup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "price": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "checkup": {
+      "type": "belongsTo",
+      "model": "Checkup",
+      "foreignKey": ""
+    },
+    "station": {
+      "type": "belongsTo",
+      "model": "Station",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

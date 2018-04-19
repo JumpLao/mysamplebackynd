@@ -1,0 +1,41 @@
+{
+  "name": "Checkup",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "iconUrl": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "duration": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stations": {
+      "type": "hasMany",
+      "model": "Station",
+      "foreignKey": "",
+      "through": "StationCheckup"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

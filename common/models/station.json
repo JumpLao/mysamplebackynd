@@ -1,0 +1,38 @@
+{
+  "name": "Station",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "checkups": {
+      "type": "hasMany",
+      "model": "Checkup",
+      "foreignKey": "",
+      "through": "StationCheckup"
+    },
+    "queue": {
+      "type": "belongsTo",
+      "model": "Queue",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

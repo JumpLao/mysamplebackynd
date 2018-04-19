@@ -1,0 +1,61 @@
+{
+  "name": "Appointment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string",
+      "required": true
+    },
+    "starttime": {
+      "type": "date",
+      "required": true
+    },
+    "queueId": {
+      "type": "number",
+      "required": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "queue": {
+      "type": "belongsTo",
+      "model": "Queue",
+      "foreignKey": ""
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "AppUser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {
+    "prototype.confirm": {
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "body",
+          "type": "object",
+          "root": true,
+          "description": "result"
+        }
+      ],
+      "description": "confirm appointment",
+      "http": {
+        "verb": "post"
+      }
+    }
+  }
+}
